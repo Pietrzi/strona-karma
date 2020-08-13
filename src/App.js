@@ -18,6 +18,18 @@ class App extends React.Component {
     sideMenu: false
   }
 
+  sideMenuClickHandler = () => {
+    this.setState(prevState => {
+      return { sideMenu: !prevState.sideMenu }
+    })
+  }
+
+  backdropClickHandler = () => {
+    this.setState({
+      sideMenu: false
+    })
+  }
+
   render() {
 
     let backdrop;
@@ -29,13 +41,14 @@ class App extends React.Component {
       <>
         {backdrop}
         <BrowserRouter>
-          <Navbar />
+          <Navbar menuHandler={this.sideMenuClickHandler}/>
+          <SideMenu show={this.state.sideMenu} />
           <Switch>
             <Route exact path='/' component={Home} />
             <Route path='/teatr' component={Theater} />
             <Route path='/film' component={Film} />
             <Route path='/galeria' component={Gallery} />
-            <Route path='/aktualnośći' component={News} />
+            <Route path='/aktualności' component={News} />
             <Route path='/bio' component={Bio} />
             <Route path='/kontakt' component={Contact} />
           </Switch>

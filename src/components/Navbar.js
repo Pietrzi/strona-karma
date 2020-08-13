@@ -2,7 +2,7 @@ import React from 'react';
 import Hamburger from './Hamburger';
 import { NavLink } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = (props) => {
     return (
         <div>
             <ul>
@@ -19,7 +19,7 @@ const Navbar = () => {
                     <NavLink to='/galeria'>Galeria</NavLink>
                 </li>
                 <li>
-                    <NavLink to='/aktualnośći'>Aktualnośći</NavLink>
+                    <NavLink to='/aktualności'>Aktualności</NavLink>
                 </li>
                 <li>
                     <NavLink to='/bio'>Bio</NavLink>
